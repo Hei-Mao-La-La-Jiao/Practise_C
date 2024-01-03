@@ -13,13 +13,8 @@ int main()
 	char bit_arr[4] = { 0 };
 
 	//²âÊÔÒ»ÏÂ
-	set_bit(bit_arr, 1);
-	printf("%d\n", bit_arr[0]);
-	clear_bit(bit_arr, 1);
-	printf("%d\n", bit_arr[0]);
-
-	assign_bit(bit_arr, 2,3);
-	printf("%d\n", bit_arr[0]);
+	set_bit(bit_arr, 7);
+	
 
 	if (test_bit(bit_arr, 7))
 	{
@@ -58,7 +53,7 @@ void assign_bit(char bit_array[], unsigned bit_number, int value)
 
 int test_bit(char bit_array[], unsigned bit_number)
 {
-	if (((bit_array[bit_number / 8]) << (bit_number % 8) & 1) == 1)
+	if ((((bit_array[bit_number / 8]) >> (bit_number % 8)) & 1) == 1)
 	{
 		return 1;
 	}
